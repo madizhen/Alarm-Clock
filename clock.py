@@ -31,9 +31,9 @@ try:
             unit_word = " minute"
         else:
             unit_word = " minutes"
-        print("You have " + str(minutes) + unit_word + " to go.")
-        minutes -= 1
-        sleep(60)
+        print("You have " + str(minutes) + unit_word + " left.")
+        minutes -= 5
+        sleep(60 * 5)
     print("You're late! You're late for a very important date!")
 except KeyboardInterrupt:
     print("clock stopped.")

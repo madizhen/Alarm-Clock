@@ -25,20 +25,16 @@ if minutes < 0:
 
 seconds = minutes * 60
 
-if minutes == 1:
-    unit_word = " minute"
-else:
-    unit_word = " minutes"
-
 try:
-    if minutes > 0:
-        print("You have " + str(minutes) + unit_word + " left.")
-        sleep(seconds)
     while minutes > 0:
-        print("You have " + str(minutes - 1) + unit_word + " to go.")
-        sleep(seconds)
-        minutes -= minutes
+        minutes -= 1
+        if minutes == 1:
+            unit_word = " minute"
+        else:
+            unit_word = " minutes"
+        print("You have " + str(minutes) + unit_word + " to go.")
+        sleep(60)
     print("You're late! You're late for a very important date!")
 except KeyboardInterrupt:
-    print("lock stopped.")
+    print("clock stopped.")
     sys.exit(1)
